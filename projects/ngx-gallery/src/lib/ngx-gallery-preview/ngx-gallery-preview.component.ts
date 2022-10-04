@@ -13,6 +13,7 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
   src: SafeUrl;
   srcIndex: number;
   description: string;
+  altText: string;
   showSpinner = false;
   positionLeft = 0;
   positionTop = 0;
@@ -24,6 +25,7 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
   @Input() images: string[] | SafeResourceUrl[];
   @Input() descriptions: string[];
   @Input() showDescription: boolean;
+  @Input() altTexts: string[];
   @Input() arrows: boolean;
   @Input() arrowsAutoHide: boolean;
   @Input() swipe: boolean;
@@ -407,6 +409,7 @@ export class NgxGalleryPreviewComponent implements OnInit, OnChanges {
       this.src = this.getSafeUrl(<string>this.images[this.index]);
       this.srcIndex = this.index;
       this.description = this.descriptions[this.index];
+      this.altText = this.altTexts[this.index];
       this.changeDetectorRef.markForCheck();
 
       setTimeout(() => {

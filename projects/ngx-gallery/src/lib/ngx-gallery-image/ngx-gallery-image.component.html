@@ -2,6 +2,8 @@
     <div class="ngx-gallery-image" 
         *ngFor="let image of getImages(); let i = index;" 
         [ngClass]="{ 'ngx-gallery-active': selectedIndex == image.index, 'ngx-gallery-inactive-left': selectedIndex > image.index, 'ngx-gallery-inactive-right': selectedIndex < image.index, 'ngx-gallery-clickable': clickable }" 
+        role="img"
+        [attr.alt]="altTexts[i]"
         [style.background-image]="getSafeUrl(image.src)" 
         (click)="handleClick($event, image.index)" >
         <div class="ngx-gallery-icons-wrapper">

@@ -29,6 +29,7 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
   @Input() actions: NgxGalleryAction[];
   @Input() descriptions: string[];
   @Input() showDescription: boolean;
+  @Input() altTexts: string[];
   @Input() bullets: boolean;
 
   @Output() onClick = new EventEmitter();
